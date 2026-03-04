@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great British Wholesale</title>
+
+  <!-- ✅ ADD THIS LINE -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+  <body>
+    <header>
+    <div class="container flex-between">
+      <div style="font-weight: 800; font-size: 30px; letter-spacing: 0.5px;">Great British Wholesale</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#brands">Brands</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+    <!-- HERO -->
+<section id="home" class="hero-slider">
+  
+  <div class="overlay">
+    
+  </div>
+  <div class="container hero-content">
+    <h1 id="herot" >UK Based Export Distributor for Vitamins, Skincare & Personal Care Product</h1>
+    <h4 class="hero-subtext">
+Supplying leading UK health & beauty brands to wholesalers, pharmacies and retailers worldwide with competitive trade pricing and reliable export logistics.
+</h4>
+  </div>
+</section>
+
+ 
+    <!-- BRANDS -->
+    <section id="brands">
+      <div class="container">
+        <h2>Brand Portfolio</h2>
+        <div class="brand-grid" id="brandGrid">
+          <!-- Brand tiles added by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+
+    <!-- ✅ ADD HERE -->
+    <div class="trade-heading">
+      <h3>Open a Trade Account</h3>
+      <p>
+        Send your target brands, quantities and destination country.
+        We will revert with pricing and lead times.
+      </p>
+    </div>
+
+    <!-- KEEP YOUR GRID BELOW -->
+  <div class="container contact-grid">
+
+    <!-- LEFT SIDE (FORM) -->
+    <div class="contact-form">
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Work Email" required />
+        <input type="text" name="company" placeholder="Company" />
+        <textarea name="message"
+          placeholder="Please tell us your requirements e.g. Brands, quantities, destination…" rows="5"
+          required></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+    <!-- RIGHT SIDE (BOX) -->
+    <div class="contact-box">
+
+  <h3>Contact Details</h3>
+  <hr>
+
+  <div class="contact-row">
+    <div class="circle-icon">
+      <i class="fa-solid fa-phone"></i>
+    </div>
+    <span>+44 (0)7356 026 776</span>
+  </div>
+
+  <div class="contact-row">
+    <div class="circle-icon">
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+    <span>sales@greatbritishwholesale.com</span>
+  </div>
+
+  <div class="contact-row">
+    <div class="circle-icon">
+      <i class="fa-solid fa-location-dot"></i>
+    </div>
+    <span>United Kingdom</span>
+  </div>
+  <div class="contact-row">
+  <div class="circle-icon">
+    <i class="fa-brands fa-whatsapp"></i>
+  </div>
+  <div>
+    <p>+44 (0)7356 026 776</p>
+  </div>
+</div>
+
+</div>
+  </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer>© 2026 Great British Wholesale • Sreesh Limited • United Kingdom
+      
+<script src="app.js"></script>
+
+<!-- ✅ PASTE EMAILJS CODE BELOW THIS LINE -->
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function () {
+    emailjs.init("MSaVRBavER2gH8rse");
+  })();
+
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      emailjs
+        .send("service_ivq8f0l", "template_isg0v2p", {
+          full_name: this.name.value,
+          work_email: this.email.value,
+          company: this.company.value,
+          message: this.message.value,
+        })
+        .then(
+          function () {
+            alert("Inquiry Sent Successfully!");
+            document.getElementById("contactForm").reset();
+          },
+          function (error) {
+            alert("Failed to send. Check EmailJS settings.");
+            console.log(error);
+          }
+        );
+    });
+</script>
+
+</body>
+</html>
+
+    <script src="app.js"></script>
+  </body>
+</html>
